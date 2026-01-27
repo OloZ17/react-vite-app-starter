@@ -3,13 +3,10 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-import prettier from 'eslint-config-prettier'
-import eslintPluginPrettierRecommanded from 'eslint-plugin-prettier/recommended'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default tseslint.config(
     { ignores: ['dist'] },
-    // applies to everything
-    eslintPluginPrettierRecommanded,
     {
         name: 'tseslint',
         extends: [js.configs.recommended, ...tseslint.configs.recommended],
@@ -30,6 +27,5 @@ export default tseslint.config(
             ],
         },
     },
-    // prettier config
-    prettier
+    eslintPluginPrettierRecommended
 )
